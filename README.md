@@ -30,3 +30,8 @@ prod_desc
 6. Delivery: del_type, del_addr, del_id, cust_id, del_by, del_date
 7. User: username, user_id, user_pass
 8. Role : role_name, role_desc
+
+
+SQL File is Attached in source code file..
+
+Filename-couriermanage.sql
