@@ -1,0 +1,414 @@
+<?php session_start();?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Courier Management  </title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+                   <!-- <i class="fas fa-laugh-wink"></i>-->
+                   <i class='fas fa-truck'></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">CMS </div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item">
+                <a class="nav-link" href="employeeindex.php">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            
+            <!-- Nav Item - Pages Collapse Menu -->
+           
+
+            <!-- Divider -->
+            
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Employee Activities
+            </div>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            
+
+            <!-- Nav Item - Charts -->
+            
+
+            <!-- Nav Item - Tables -->
+            <li class="nav-item">
+                <a class="nav-link" href="empupdatetracking.php">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Tracking Update</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="empdeliverylist.php">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Delivery List</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="aboutusemp.php">
+                    <i class="fas fa-fw fa-comment"></i>
+                    <span>About US</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                <h1 class="h3 mb-4 text-gray-800">Courier Management System</h1>
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- Topbar Search -->
+                    
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                        <li class="nav-item dropdown no-arrow d-sm-none">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-search fa-fw"></i>
+                            </a>
+                            <!-- Dropdown - Messages -->
+                            
+                        </li>
+
+                        <!-- Nav Item - Alerts -->
+                        
+
+                        <!-- Nav Item - Messages -->
+                        
+
+                        <div class="topbar-divider d-none d-sm-block"></div>
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"> <?php echo " ".$_SESSION['custname'];?></span>
+                                <img class="img-profile rounded-circle"
+                                    src="img/undraw_profile.svg">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                
+                                
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Activity Log
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="logout.php" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                   
+                    <style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+  background-color: white;
+  
+}
+.text{
+    padding: 16px;
+  background-color: white;
+    text-align:center;
+}
+
+/* Full-width input fields */
+input[type=text],input[type=date], input[type=password],select {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus,input[type=date]:focus,select:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+.ab{
+    justify-content:center;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  margin: 3px 0;
+  border: none;
+  cursor: pointer;
+  width: 40%;
+  opacity: 0.9;
+  justify-content:center;
+}
+
+.registerbtn:hover {
+  opacity: 1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+#branch {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#branch td, #branch th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  color:black;
+
+}
+.a{
+    color:black;
+    text-align:center;
+    font-weight:bold;
+}
+
+#branch tr:nth-child(even){background-color: #f2f2f2;}
+
+#branch tr:hover {background-color: #ddd;}
+
+#branch th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+
+</style>
+                    
+<body>
+
+<form action="" method="GET">
+  <div class="container">
+    <h3 class="text">Employee Delivery List</h3>
+    
+    <hr>
+
+    <label for="custid"><b>Employee ID</b></label>
+    <input type="text" placeholder="Enter Registered Courier Id Correctly" name="emp_id" value="<?php ob_start(); if(isset($_GET['emp_id'])) {echo $_GET['emp_id'];}?>" required>
+    <button type="submit" class="ab">Search</button><br><br>
+    
+    
+   
+  </div>
+  <div class="container">
+     
+      <table id="branch">
+          <tr>           
+            <th>Customer Id</th>
+            <th>Courier ID</th>
+            <th>Delivery Id</th>
+            <th>Delivery date</th>
+            <th>Destination Address</th>
+            <th>Delivery Type</th>
+            <th>Destination Phone</th>
+            <th>Customer Name</th>
+            
+          </tr>
+      <?php
+      include 'config.php';
+      //$conn= msqli_connect("localhost","root","","couriermanage");
+      if(isset($_GET['emp_id']))
+      {
+          $eid=$_GET['emp_id'];
+          
+        
+        
+         // Using database connection file here
+        $sql="SELECT * from employee,delivery where employee.emp_id='$eid' and delivery.emp_id='$eid'";
+        $records = mysqli_query($conn,$sql); // fetch data from database
+        
+        if($data = mysqli_fetch_array($records))
+        {
+        ?>
+          <tr>
+            <td><?php echo $data['cust_id']; ?></td>
+            <td><?php echo $data['courier_id']; ?></td>
+            <td><?php echo $data['del_id']; ?></td>
+            <td><?php echo $data['del_date']; ?></td>
+            <td><?php echo $data['dest_addr']; ?></td>
+            <td><?php echo $data['del_type']; ?></td>
+            <td><?php echo $data['dest_ph']; ?></td>
+            <td><?php echo $data['cust_name']; ?></td>
+            
+          </tr>	
+        <?php
+        }
+        else{
+        echo "No Records Found";
+               }         }
+
+        ?>
+        </table>
+          
+    
+      </form>
+
+
+</body>
+
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span></span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="logout.php">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+</body>
+
+</html>
